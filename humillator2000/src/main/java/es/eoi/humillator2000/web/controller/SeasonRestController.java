@@ -2,6 +2,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Season;
 import es.eoi.humillator2000.service.SeasonService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class SeasonRestController {
     }
 
     @GetMapping
-    public List<Season> findAll(){
-        return seasonService.findAll();
+    public Page<Season> findAll(Pageable pageable){
+        return seasonService.findAll(pageable);
     }
 
     @GetMapping("/{id}")

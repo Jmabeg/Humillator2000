@@ -2,6 +2,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.ClubRole;
 import es.eoi.humillator2000.service.ClubRoleService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class ClubRoleRestController {
     }
 
     @GetMapping
-    public List<ClubRole> findAll(){
-        return clubRoleService.findAll();
+    public Page<ClubRole> findAll(Pageable pageable){
+        return clubRoleService.findAll(pageable);
     }
 
     @GetMapping("/{id}")

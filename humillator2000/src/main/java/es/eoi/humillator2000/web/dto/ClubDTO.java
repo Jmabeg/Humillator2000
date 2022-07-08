@@ -12,7 +12,4 @@ public class ClubDTO {
     private String name;
 
 
-
-
-
 }

@@ -2,6 +2,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.User;
 import es.eoi.humillator2000.service.UserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +19,8 @@ public class UserRestController {
     }
 
     @GetMapping
-    public List<User> findAll(){
-        return userService.findAll();
+    public Page<User> findAll(Pageable pageable){
+        return userService.findAll(pageable);
     }
 
     @GetMapping("/{id}")

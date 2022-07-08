@@ -28,7 +28,4 @@ public class Season implements IEntity<Integer> {
     @OneToMany(mappedBy = "season")
     private Set<Match> matches;
 
-
-
-
 }

@@ -2,6 +2,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Role;
 import es.eoi.humillator2000.service.RoleService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class RoleRestController {
 
 
     @GetMapping
-    public List<Role> findAll(){
-        return roleService.findAll();
+    public Page<Role> findAll(Pageable pageable){
+        return roleService.findAll(pageable);
     }
 
     @GetMapping("/{id}")

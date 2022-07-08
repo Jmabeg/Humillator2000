@@ -48,13 +48,4 @@ public class ClubService extends AbstractService<Integer, Club, ClubRepository>{
     }
 
 
-
-//    public void addClubRole (Integer id, Integer userId, Integer roleId){
-//        final User user = this.userRepository.findById(userId).orElseThrow(()-> new RuntimeException("No existe usuario para el id + ID----------"));
-//        final ClubRole clubRole = this.clubRoleRepository.findById(roleId).orElseThrow(()->new RuntimeException("No existe el rol"));
-//
-//        final
-//
-//    }
-
 }
