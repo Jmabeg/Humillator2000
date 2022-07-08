@@ -1,9 +1,14 @@
 package es.eoi.humillator2000.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "user_group_role")
 public class ClubRole implements IEntity<Integer> {
     @Id
@@ -16,29 +21,5 @@ public class ClubRole implements IEntity<Integer> {
     @OneToMany(mappedBy = "clubRole")
     private Set<UserHasClub> usersWithgroup;
 
-    // GETTERS & SETTERS
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<UserHasClub> getUsersWithgroup() {
-        return usersWithgroup;
-    }
-
-    public void setUsersWithgroup(Set<UserHasClub> usersWithgroup) {
-        this.usersWithgroup = usersWithgroup;
-    }
 }

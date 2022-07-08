@@ -1,9 +1,14 @@
 package es.eoi.humillator2000.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Club implements IEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,27 +22,5 @@ public class Club implements IEntity<Integer> {
 
 
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Set<Match> getMatches() {
-        return matches;
-    }
-
-    public void setMatches(Set<Match> matches) {
-        this.matches = matches;
-    }
 }

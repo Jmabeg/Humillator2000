@@ -1,10 +1,15 @@
 package es.eoi.humillator2000.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Match implements IEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,99 +42,5 @@ public class Match implements IEntity<Integer> {
     @OneToMany(mappedBy = "match")
     private Set<UserHasMatch> userHasMatches;
 
-    public Set<UserHasMatch> getUserHasMatches() {
-        return userHasMatches;
-    }
 
-    public void setUserHasMatches(Set<UserHasMatch> userHasMatches) {
-        this.userHasMatches = userHasMatches;
-    }
-
-    public Club getUserGroup() {
-        return club;
-    }
-
-    public void setUserGroup(Club club) {
-        this.club = club;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getStartingDate() {
-        return startingDate;
-    }
-
-    public void setStartingDate(LocalDateTime startingDate) {
-        this.startingDate = startingDate;
-    }
-
-    public LocalDateTime getEndingDate() {
-        return endingDate;
-    }
-
-    public void setEndingDate(LocalDateTime endingDate) {
-        this.endingDate = endingDate;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Boolean getDelete() {
-        return delete;
-    }
-
-    public void setDelete(Boolean delete) {
-        this.delete = delete;
-    }
-
-    public Season getSeason() {
-        return season;
-    }
-
-    public void setSeason(Season season) {
-        this.season = season;
-    }
-
-    public Club getClub() {
-        return club;
-    }
-
-    public void setClub(Club club) {
-        this.club = club;
-    }
 }

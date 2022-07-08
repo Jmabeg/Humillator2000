@@ -1,7 +1,11 @@
 package es.eoi.humillator2000.web.dto;
 
-import java.util.Set;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Set;
+@Getter
+@Setter
 public class UserDTO {
     private Integer id;
     private String login;

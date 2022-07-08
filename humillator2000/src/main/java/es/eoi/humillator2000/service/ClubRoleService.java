@@ -15,4 +15,5 @@ public class ClubRoleService extends AbstractService<Integer, ClubRole, ClubRole
     }
 
 
+
 }

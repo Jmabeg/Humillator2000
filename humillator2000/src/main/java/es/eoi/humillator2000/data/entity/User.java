@@ -1,10 +1,15 @@
 package es.eoi.humillator2000.data.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.sql.Blob;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "humillator_user")
 public class User implements IEntity<Integer> {
 
@@ -32,52 +37,5 @@ public class User implements IEntity<Integer> {
 
 
 
-    // GETTERS & SETTERS
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Blob getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(Blob avatar) {
-        this.avatar = avatar;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Set<Role> getUserRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = this.roles;
-    }
 }
