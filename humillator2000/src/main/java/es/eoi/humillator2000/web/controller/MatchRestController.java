@@ -3,6 +3,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Match;
 import es.eoi.humillator2000.service.MatchService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +20,8 @@ public class MatchRestController {
     }
 
     @GetMapping
-    public List<Match> findAll(){
-        return matchService.findAll();
+    public Page<Match> findAll(Pageable pageable){
+        return matchService.findAll(pageable);
     }
 
     @GetMapping("/{id}")

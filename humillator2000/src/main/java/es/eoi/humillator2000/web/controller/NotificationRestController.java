@@ -3,6 +3,8 @@ package es.eoi.humillator2000.web.controller;
 
 import es.eoi.humillator2000.data.entity.Notification;
 import es.eoi.humillator2000.service.NotificationService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,9 +19,7 @@ public class NotificationRestController {
     }
 
     @GetMapping
-    public List<Notification> findAll(){
-        return notificationService.findAll();
-    }
+    public Page<Notification> findAll(Pageable pageable){ return notificationService.findAll(pageable); }
 
     @GetMapping("/{id}")
     public Notification findById(@PathVariable("id") Integer id){

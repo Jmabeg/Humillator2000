@@ -57,7 +57,7 @@ public class Season implements IEntity<Integer> {
         this.name = name;
     }
 
-    public List<Match> getMatches() {
+    public Set<Match> getMatches() {
         return matches;
     }
 
