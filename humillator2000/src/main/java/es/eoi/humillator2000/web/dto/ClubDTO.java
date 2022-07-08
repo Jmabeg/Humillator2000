@@ -8,7 +8,7 @@ public class ClubDTO {
     private Integer id;
     private String name;
 
-
+    // NO HAY
     public Integer getId() {
         return id;
     }
