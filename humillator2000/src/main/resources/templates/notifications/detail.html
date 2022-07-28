@@ -53,10 +53,10 @@
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/notification/detail}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
+                    <a th:href="@{/notifications}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/notification/detail' + ${notification.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
+                    <a th:href="@{'/notifications/detail' + ${notification.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>
                     <button type="submit" class="box-title btn btn-danger" title="Save Data" th:text="#{General.Delete}"></button>

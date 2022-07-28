@@ -85,12 +85,12 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="match_club" th:text="#{Matches.Title}"></label>
+                                        <label for="match_club" th:text="#{Matches.Club}"></label>
                                         <p th:field="${match.club}" id="match_club"></p>
                                     </div>
                                 </div>
 
-                                <!-- Usuarios tabla has? -->
+                                <!-- Usuarios tabla has? que pasa con el set? -->
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="match_users" th:text="#{Matches.Title}"></label>
@@ -104,10 +104,10 @@
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/match/detail}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
+                    <a th:href="@{/matches}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/match/detail' + ${match.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
+                    <a th:href="@{'/matches/detail' + ${match.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>
                     <button type="submit" class="box-title btn btn-danger" title="Save Data" th:text="#{General.Delete}"></button>

@@ -29,6 +29,13 @@
                             <input type="text" th:field="${match.title}" name="match_title" class="form-control" id="match_title" disabled/>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <a th:href="@{/matches/list}" class="btn btn-default" role="button" title="Back list" th:text="#{Delete.Cancel}">
+                            <span aria-hidden="true"></span>
+                        </a>
+                        <button type="submit" class="btn btn-danger" title="Delete Data" th:text="#{Delete.Accept}"></button>
+                    </div>
                 </form>
 
             </div>
