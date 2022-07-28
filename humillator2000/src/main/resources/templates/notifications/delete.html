@@ -30,6 +30,13 @@
                             <input type="text" th:field="${notification.id}" name="notification_id" class="form-control" id="notification_id" disabled/>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <a th:href="@{/notifications/list}" class="btn btn-default" role="button" title="Back list" th:text="#{Delete.Cancel}">
+                            <span aria-hidden="true"></span>
+                        </a>
+                        <button type="submit" class="btn btn-danger" title="Delete Data" th:text="#{Delete.Accept}"></button>
+                    </div>
                 </form>
 
             </div>

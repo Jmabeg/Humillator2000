@@ -29,6 +29,14 @@
 
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <a th:href="@{/clubs/list}" class="btn btn-default" role="button" title="Back list" th:text="#{Delete.Cancel}">
+                            <span aria-hidden="true"></span>
+                        </a>
+                        <button type="submit" class="btn btn-danger" title="Delete Data" th:text="#{Delete.Accept}"></button>
+                    </div>
+
                 </form>
             </div>
         </div>

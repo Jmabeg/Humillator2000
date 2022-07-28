@@ -42,4 +42,10 @@ public class ClubRestController {
 
     @PostMapping("/{id}/user")
     public void addUser(@PathVariable("id") Integer id, Integer userId){}
+
+
+
+
+
+
 }
