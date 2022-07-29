@@ -20,7 +20,7 @@ public class Club implements IEntity<Integer> {
     @OneToMany(mappedBy = "club")
     private Set<Match> matches;
 
-
-
+    @ManyToOne
+    private User user;
 
 }
