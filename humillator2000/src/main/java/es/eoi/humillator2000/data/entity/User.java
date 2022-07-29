@@ -23,6 +23,8 @@ public class User implements IEntity<Integer> {
     @Column(nullable = false)
     private String password;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Club> clubs;
 
     private byte[] avatar;
 
@@ -35,7 +37,7 @@ public class User implements IEntity<Integer> {
             inverseJoinColumns = @JoinColumn(name = "user_role_ID"))
     private Set<Role> roles;
 
-
-
+    @OneToMany(mappedBy = "user")
+    private Set<UserHasClub> userHasClubs;
 
 }
