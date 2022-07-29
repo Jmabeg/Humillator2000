@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Modify Notification</title>
+</head>
+<body>
+<div layout:fragment="breadcrumb" th:object="${notification}">
+    <h1>Edit Notification</h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="/club"><i class="fa fa-tasks"></i>Clubs</a></li>
+        <li class="active" th:text="@{'Notification ID: <b>' + ${Notifications.Id}} + '</b>'"></li>
+    </ol>
+</div>
+
+<div layout:fragment="content">
+    <div class="row">
+        <div class="col-md-12">
+            <form role="form" th:object="${notification}" method="post">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="tab-content">
+
+                            <!-- Mismo problema con tabla userHasMatch, si yo le paso userId de sesion y matchId de partido del que genero noti
+                                convierte y genera userHasMatch? -->
+                            <input th:type="hidden" th:field="${notification.id}"/>
+                            <input th:type="hidden" th:field="${user.id}"/>
+                            <input th:type="hidden" th:field="${notification.id}"/>
+
+                            <div class="tab-pane active" id="1a">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="notification_minutes" th:text="#{Notifications.Minutes}"></label>
+                                        <input type="date" th:field="${notification.minutes}" name="notification_minutes" class="form-control" id="notification_minutes"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="notification_isNotified" th:text="#{Notifications.IsNotified}"></label>
+                                        <input type="date" th:field="${notification.isNotified}" name="notification_isNotified" class="form-control" id="notification_isNotified"/>
+                                    </div>
+                                </div>
+
+                                <!-- Notificaciones por tiempo antes del partido o simplemente al crear uno?
+                                id
+                                minutes;
+                                isNotifyed;
+                                userId;
+                                matchId;
+                                -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-footer with-border">
+                    <a th:href="@{/notifications}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Cancel}">
+                        <span aria-hidden="true"></span>
+                    </a>
+                    <button type="submit" class="box-title btn btn-primary" title="Save Data" th:text="#{General.Save}">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
