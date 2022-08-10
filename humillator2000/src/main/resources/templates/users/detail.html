@@ -3,20 +3,20 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Notification</title>
+    <title>User</title>
 </head>
 <body>
-<div layout:fragment="breadcrumb" th:object="${notification}">
-    <h1>Notification Detail</h1>
+<div layout:fragment="breadcrumb" th:object="${user}">
+    <h1>User Detail</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/clubs"><i class="fa fa-tasks"></i> Clubs</a></li>
-        <li class="active" th:utext="@{'Notification ID: <b>' + ${Notifications.Id}} + '</b>'"></li>
+        <li class="active" th:utext="@{'User ID: <b>' + ${Users.Id}} + '</b>'"></li>
     </ol>
 </div>
 
 <div layout:fragment="content">
-    <form role="form" th:object="${notification}" method="post" action="#" th:action="@{'/notification/detail' + ${notification.id} + '/delete'}">
+    <form role="form" th:object="${user}" method="post" action="#" th:action="@{'/user/detail' + ${user.id} + '/delete'}">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -26,26 +26,33 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="notification_minutes" th:text="#{Notifications.Minutes}"></label>
-                                        <p th:field="${notification.minutes}" id="notification_minutes"></p>
+                                        <label for="user_login" th:text="#{Users.Login}"></label>
+                                        <p th:field="${user.login}" id="user_login"></p>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="notification_isNotified" th:text="#{Notification.IsNotified}"></label>
-                                        <p th:field="${notification.isNotified}" id="notification_isNotified"></p>
+                                        <label for="user_avatar" th:text="#{User.Avatar}"></label>
+                                        <p th:field="${user.isNotified}" id="user_avatar"></p>
                                     </div>
                                 </div>
 
-                                <!-- Mostrar match.title en lugar del id -->
+
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="notification_match" th:text="#{Notification.MatchId}"></label>
-                                        <p th:field="${notification.matchId}" id="notification_match"></p>
+                                        <label for="user_email" th:text="#{User.Email}"></label>
+                                        <p th:field="${user.email}" id="user_email"></p>
                                     </div>
                                 </div>
 
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="user_roles" th:text="#{User.Email}"></label>
+                                        <p th:field="${user.roles}" id="user_roles"></p>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -53,10 +60,10 @@
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/notifications}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
+                    <a th:href="@{/users}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Back}">
                         <span aria-hidden="true"></span>
                     </a>
-                    <a th:href="@{'/notifications/detail' + ${notification.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
+                    <a th:href="@{'/users/detail' + ${user.id} + '/edit'}" class="btn btn-primary" role="button" title="Back list" th:text="#{General.Edit}">
                         <span aria-hidden="true"></span>
                     </a>
                     <button type="submit" class="box-title btn btn-danger" title="Save Data" th:text="#{General.Delete}"></button>

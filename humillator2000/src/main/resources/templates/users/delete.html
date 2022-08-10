@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
 <head>
-    <title th:text="Delete Notification"></title>
+    <title th:text="Delete User"></title>
 </head>
 <body>
 <div layout:fragment="breadcrumb">
     <h1 th:text="#{Delete.Subtitle}"></h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> <span th:text="#{Home.Title}"></span> </a></li>
-        <li class="active" th:text="Delete Notification"></li>
+        <li class="active" th:text="Delete User"></li>
     </ol>
 </div>
 <div layout:fragment="content">
@@ -20,19 +20,19 @@
                     <h3 class="box-title">&nbsp;</h3>
                 </div>
 
-                <form role="form" th:object="${notification}" method="post">
+                <form role="form" th:object="${user}" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <input th:type="hidden" th:field="${notification.id}"/>
+                            <input th:type="hidden" th:field="${user.id}"/>
 
                             <!-- Necesario mostrar al usuario algo? -->
-                            <label for="notification_id" th:text="#{Notifications.Id}"></label>
-                            <input type="text" th:field="${notification.id}" name="notification_id" class="form-control" id="notification_id" disabled/>
+                            <label for="notification_login" th:text="#{Users.Id}"></label>
+                            <input type="text" th:field="${user.login}" name="notification_login" class="form-control" id="notification_login" disabled/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <a th:href="@{/notifications/list}" class="btn btn-default" role="button" title="Back list" th:text="#{Delete.Cancel}">
+                        <a th:href="@{/users/list}" class="btn btn-default" role="button" title="Back list" th:text="#{Delete.Cancel}">
                             <span aria-hidden="true"></span>
                         </a>
                         <button type="submit" class="btn btn-danger" title="Delete Data" th:text="#{Delete.Accept}"></button>

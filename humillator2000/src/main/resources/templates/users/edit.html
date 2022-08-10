@@ -3,53 +3,58 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
 <head>
-    <title>Modify Notification</title>
+    <title>Modify User</title>
 </head>
 <body>
-<div layout:fragment="breadcrumb" th:object="${notification}">
-    <h1>Edit Notification</h1>
+<div layout:fragment="breadcrumb" th:object="${user}">
+    <h1>Edit User</h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i>Home</a></li>
         <li><a href="/club"><i class="fa fa-tasks"></i>Clubs</a></li>
-        <li class="active" th:text="@{'Notification ID: <b>' + ${Notifications.Id}} + '</b>'"></li>
+        <li class="active" th:text="@{'User ID: <b>' + ${Users.Id}} + '</b>'"></li>
     </ol>
 </div>
 
 <div layout:fragment="content">
     <div class="row">
         <div class="col-md-12">
-            <form role="form" th:object="${notification}" method="post">
+            <form role="form" th:object="${user}" method="post">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="tab-content">
 
                             <!-- Mismo problema con tabla userHasMatch, si yo le paso userId de sesion y matchId de partido del que genero noti
                                 convierte y genera userHasMatch? -->
-                            <input th:type="hidden" th:field="${notification.id}"/>
                             <input th:type="hidden" th:field="${user.id}"/>
-                            <input th:type="hidden" th:field="${notification.id}"/>
 
                             <div class="tab-pane active" id="1a">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="notification_minutes" th:text="#{Notifications.Minutes}"></label>
-                                        <input type="date" th:field="${notification.minutes}" name="notification_minutes" class="form-control" id="notification_minutes"/>
+                                        <label for="user_login" th:text="#{Users.Login}"></label>
+                                        <input type="date" th:field="${user.login}" name="user_login" class="form-control" id="user_login"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
-                                        <label for="notification_isNotified" th:text="#{Notifications.IsNotified}"></label>
-                                        <input type="date" th:field="${notification.isNotified}" name="notification_isNotified" class="form-control" id="notification_isNotified"/>
+                                        <label for="user_avatar" th:text="#{Users.Avatar}"></label>
+                                        <input type="date" th:field="${user.avatar}" name="user_avatar" class="form-control" id="user_avatar"/>
                                     </div>
                                 </div>
 
-                                <!-- Notificaciones por tiempo antes del partido o simplemente al crear uno?
-                                id
-                                minutes;
-                                isNotifyed;
-                                userId;
-                                matchId;
-                                -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="user_email" th:text="#{Users.Email}"></label>
+                                        <input type="date" th:field="${user.avatar}" name="user_email" class="form-control" id="user_email"/>
+                                    </div>
+                                </div>
+
+                                <!-- Set de Roles?? -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="user_roles" th:text="#{Users.Roles}"></label>
+                                        <input type="date" th:field="${user.role}" name="user_roles" class="form-control" id="user_roles"/>
+                                    </div>
+                                </div>
                                 
                             </div>
                         </div>
@@ -57,7 +62,7 @@
                 </div>
 
                 <div class="box-footer with-border">
-                    <a th:href="@{/notifications}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Cancel}">
+                    <a th:href="@{/users}" class="btn btn-default" role="button" title="Back list" th:text="#{General.Cancel}">
                         <span aria-hidden="true"></span>
                     </a>
                     <button type="submit" class="box-title btn btn-primary" title="Save Data" th:text="#{General.Save}">
