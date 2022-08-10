@@ -24,7 +24,7 @@ public class ClubService extends AbstractService<Integer, Club, ClubRepository, 
 
 
     public List<Club> getClubsByUserId(Integer id){
-        return super.getRepository().findByUserHasClubUserId(id);
+        return super.getRepository().findByUserUserHasClubsUserId(id);
     }
 
 
